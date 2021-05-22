@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "MWConvenience",
+    name: "Convenience",
     platforms: [
         .iOS(.v14),
         .macOS(.v11),
@@ -13,15 +13,15 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "MWConvenience",
-            targets: ["MWConvenience"]),
+            name: "Convenience",
+            targets: ["Convenience"]),
     ],
     targets: [
         .target(
-            name: "MWConvenience",
+            name: "Convenience",
             dependencies: []),
         .testTarget(
-            name: "MWConvenienceTests",
-            dependencies: ["MWConvenience"]),
+            name: "ConvenienceTests",
+            dependencies: ["Convenience"]),
     ]
 )
