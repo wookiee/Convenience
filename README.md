@@ -1,9 +1,9 @@
 [![Unilicense](https://img.shields.io/badge/license-Unilicense-brightgreen)](https://unlicense.org)
 [![Swift 5.4](https://img.shields.io/badge/Swift-5.4-blue)](https://swift.org)
 
-# MWConvenience
+# Convenience
 
-This is a little holding place for common conveniences that I like to use in my personal projects.
+This is a little holding place for common tools and conveniences that I like to use in my personal projects.
 
 If anyone ever finds and uses this, I'd love to hear any feedback.
 
