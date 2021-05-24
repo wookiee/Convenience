@@ -1,4 +1,4 @@
-[![Unilicense](https://img.shields.io/badge/license-Unilicense-brightgreen)](https://unlicense.org)
+[![Unilicense](https://img.shields.io/badge/license-Unlicense-brightgreen)](https://unlicense.org)
 [![Swift 5.4](https://img.shields.io/badge/Swift-5.4-blue)](https://swift.org)
 
 # Convenience
