@@ -15,6 +15,8 @@ If anyone ever finds and uses this, I'd love to hear any feedback.
     * `Int`:
         * `of<Value>(_ value: @autoclosure () throws -> Value) rethrows -> [Value])`: fills an array with _self_ values by executing the provided closure _self_ times.
         * `times(_ execute: @autoclosure () throws -> Void) rethrows`: executes the provided closure _self_ times.
+    * `String`:
+        * `randomTitle()`: generates a 2-6 word randomized Title Case string.
     * `Result`:
         *`static func success()`: a wrapper for the uglier `.success(())`
 * Tools:
