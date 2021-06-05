@@ -14,15 +14,15 @@ public struct UserDefault<Value: Codable> {
     public let key: String
     public let defaults: UserDefaults
     
-    private let encoder = PropertyListEncoder.shared
-    private let decoder = PropertyListDecoder.shared
+    private let encoder = JSONEncoder.shared
+    private let decoder = JSONDecoder.shared
     
     public init(key: String, defaults: UserDefaults = .standard) {
         self.key = key
         self.defaults = defaults
     }
 
-   public  var wrappedValue: Value? {
+    public var wrappedValue: Value? {
         get { retrieveValue() }
         set { storeValue(newValue) }
     }
@@ -52,18 +52,22 @@ public struct UserDefault<Value: Codable> {
             let data = try encoder.encode(newValue)
             defaults.set(data, forKey: key)
         } catch {
-            log.error("UserDefault storage error, could not encode new value:  \(Mirror(reflecting:newValue)).\nReason: \(error.localizedDescription)")
+            if let newValue = newValue as? CustomStringConvertible {
+                log.error("UserDefault storage error, could not encode new value:  \(newValue.description).\nReason: \(error.localizedDescription)")
+            } else {
+                log.error("UserDefault storage error, could not encode new value of non-CustomStringConvertible type \(type(of: newValue))")
+            }
             assertionFailure()
         }
     }
 }
 
-private extension PropertyListEncoder {
-    static let shared = PropertyListEncoder()
+private extension JSONEncoder {
+    static let shared = JSONEncoder()
 }
 
-private extension PropertyListDecoder {
-    static let shared = PropertyListDecoder()
+private extension JSONDecoder {
+    static let shared = JSONDecoder()
 }
 
 public extension UserDefault {
