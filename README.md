@@ -11,7 +11,7 @@ If anyone ever finds and uses this, I'd love to hear any feedback.
 
 * Extensions:
     * `OSLog.Logger`:
-        * `init(category:)`, which uses the process name and bundle name for the logger's `subsystem`.
+        * `init(_:)`, which uses the process name and bundle name for the logger's `subsystem`, and the provided string for the `category`.
     * `Int`:
         * `of<Value>(_ value: @autoclosure () throws -> Value) rethrows -> [Value])`: fills an array with _self_ values by executing the provided closure _self_ times.
         * `times(_ execute: @autoclosure () throws -> Void) rethrows`: executes the provided closure _self_ times.
