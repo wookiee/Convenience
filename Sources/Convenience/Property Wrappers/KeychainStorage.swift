@@ -2,8 +2,7 @@
 import Foundation
 import OSLog
 
-private let log = Logger(subsystem: "\(ProcessInfo().processName)[\(Bundle.main.bundleIdentifier ?? "unknown bundle")]",
-                         category: "keychain-property-wrapper")
+private let log = Logger("keychain-property-wrapper")
 
 /// Property wrapper for storing and retrieving values securely in the keychain.
 @propertyWrapper

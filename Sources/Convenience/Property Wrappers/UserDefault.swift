@@ -2,8 +2,7 @@
 import Foundation
 import OSLog
 
-private let log = Logger(subsystem: "\(ProcessInfo().processName)[\(Bundle.main.bundleIdentifier ?? "unknown bundle")]",
-                         category: "user-default-wrapper")
+private let log = Logger("user-default-wrapper")
 
 /// Property wrapper for convenient storage of properties in UserDefaults.
 /// The wrapped property type must be `Optional` and `Codable`.

@@ -2,8 +2,7 @@
 import Security
 import OSLog
 
-private let log = Logger(subsystem: "\(ProcessInfo().processName)[\(Bundle.main.bundleIdentifier ?? "unknown bundle")]",
-                         category: "keychain")
+private let log = Logger("Keychain")
 
 /// Utility type for storing simple string values into the keychain for secure storage.
 public class Keychain {
