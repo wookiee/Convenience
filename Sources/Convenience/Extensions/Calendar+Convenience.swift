@@ -1,7 +1,7 @@
 
 import Foundation
 
-extension Calendar {
+public extension Calendar {
     
     /// Compute the number of days from one `Date` to another in terms of a human-centric understanding of calendar dates, accounting for partial days.
     ///
