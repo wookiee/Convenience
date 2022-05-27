@@ -17,6 +17,9 @@ If anyone ever finds and uses this, I'd love to hear any feedback.
         * `times(_ execute: @autoclosure () throws -> Void) rethrows`: executes the provided closure _self_ times.
     * `String`:
         * `randomTitle(wordCount:)`: generates a randomized Title Case string a specified number of words long.
+    * `Calendar`:
+        * `days(from:to:)`: computes a distance, in days, between two dates. Accounts for partial days.
+        * `cardinalComponents(from:to:)` computes a distance, in years, months, and days, between two dates. Accounts for partial days.
     * `Result`:
         *`static func success()`: a wrapper for the uglier `.success(())`
 * Tools:
