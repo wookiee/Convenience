@@ -12,11 +12,29 @@ struct ThingClass: Codable, Equatable {
 }
 
 final class UserDefaultTests: XCTestCase {
+    
+    override func setUp() {
+        resetUserDefaults()
+    }
+    
+    override func tearDown() {
+        resetUserDefaults()
+    }
 
-    @UserDefault(key: "ConvenienceTests_stringDefault") var stringDefault: String?
-    @UserDefault(key: "ConvenienceTests_doubleDefault") var doubleDefault: Double?
-    @UserDefault(key: "ConvenienceTests_thingStructDefault") var thingStructDefault: ThingStruct?
-    @UserDefault(key: "ConvenienceTests_thingClassDefault") var thingClassDefault: ThingClass?
+    @UserDefault(key: "ConvenienceTests_stringDefault")
+    var stringDefault: String?
+    
+    @UserDefault(key: "ConvenienceTests_doubleDefault")
+    var doubleDefault: Double?
+    
+    @UserDefault(key: "ConvenienceTests_thingStructDefault")
+    var thingStructDefault: ThingStruct?
+    
+    @UserDefault(key: "ConvenienceTests_thingClassDefault")
+    var thingClassDefault: ThingClass?
+    
+    @UserDefault(key: "ConvenienceTests_doubleDefaultWithDefaultValue", defaultValue: -5.0)
+    var doubleDefaultWithDefaultValue: Double?
 
     func testStoreAndRetrieveStringDefault() throws {
         let valueIn = "Hello"
@@ -46,4 +64,23 @@ final class UserDefaultTests: XCTestCase {
         XCTAssertEqual(valueIn, valueOut)
     }
     
+    func testRetrieveStructThingDefaultWithDefaultValue() throws {
+        let valueOut = doubleDefaultWithDefaultValue
+        let expectedValueOut = -5.0
+        XCTAssertEqual(valueOut, expectedValueOut)
+    }
+    
+    func testStoreAndRetrieveThingStructDefaultWithDefaultValue() throws {
+        let valueIn = 10.0
+        let expectedValueOut = 10.0
+        doubleDefaultWithDefaultValue = valueIn
+        let valueOut = doubleDefaultWithDefaultValue
+        XCTAssertEqual(valueOut, expectedValueOut)
+    }
+    
+}
+
+private func resetUserDefaults() {
+    let domainName = Bundle.main.bundleIdentifier!
+    UserDefaults.standard.removePersistentDomain(forName: domainName)
 }

@@ -27,4 +27,4 @@ If anyone ever finds and uses this, I'd love to hear any feedback.
 * Property wrappers:
     * `KeychainStorage`: A property wrapper that uses the `Keychain` convenience to wrap properties that use the user's keychain for their storage.
     * `ReadersWriterLocked`: A property wrapper for making values thread-safe for access using a queue-based readers-writer lock.
-    * `UserDefault`: A property wrapper that uses `UserDefaults` for storage. Requires that the property type is `Codable`.
+    * `UserDefault`: A property wrapper that uses `UserDefaults` for storage. Requires that the property's type is `Optional` and `Codable`.
